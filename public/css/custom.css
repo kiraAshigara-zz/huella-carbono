@@ -3,7 +3,7 @@ body > .container {
     max-width: 800px;
 }
 
-#electrodomesticos, #transporte, #recomendaciones {
+#electrodomesticos, #transporte, #recomendaciones, #graficas {
     padding: 25px;
     background-color: #f5f2f0;
     border: solid 1px rgba(51, 51, 51, 0.12);

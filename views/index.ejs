@@ -41,25 +41,58 @@
                 <li class="tab col s3"><a class="active" href="#electrodomesticos">Electrodomesticos</a></li>
                 <li class="tab col s3"><a href="#transporte">Transporte</a></li>
                 <li class="tab col s3"><a href="#recomendaciones">Recomendaciones</a></li>
+                <li class="tab col s3"><a href="#graficas">Graficas</a></li>
             </ul>
         </div>
 
         <div id="electrodomesticos" class="col s12">
             <p style="margin-top: 0;">Porfavor ingrese las horas en los campos correspondientes.</p>
+            <form class="col s12">
+                <div class="row">
+                    <div class="input-field col s2">
+                        <input placeholder="Selecciona una fecha" id="date-electro" type="text" class="datepicker">
+                        <label for="date-electro">Fecha</label>
+                    </div>
+                </div>
+            </form>
             <div class="row list-inputs-electrodomesticos">
             </div>
             <a class="right waves-effect waves-light btn save-electrodomesticos-form">Guardar</a>
         </div>
 
         <div id="transporte" class="col s12">
-            <p style="margin-top: 0;">Porfavor ingrese las horas en los campos correspondientes.</p>
+            <p style="margin-top: 0;">Porfavor ingrese los kilometros en los campos correspondientes.</p>
+            <form class="col s12">
+                <div class="row">
+                    <div class="input-field col s2">
+                        <input placeholder="Selecciona una fecha" id="date-transporte" type="text" class="datepicker">
+                        <label for="date-transporte">Fecha</label>
+                    </div>
+                </div>
+            </form>
             <div class="row list-inputs-transportes">
             </div>
             <a class="right waves-effect waves-light btn save-transportes-form">Guardar</a>
         </div>
 
         <div id="recomendaciones" class="col s12">
-            Recomendaciones para un futuro release!
+            <div class="row" style="text-align: center;">
+                <img style="width: 130px;border-radius: 50%;" src="/img/recomendaciones.jpg">
+            </div>
+            <p>Recomendaciones para Electrodomesticos:</p>
+            <div class="row recomendaciones-electro">
+
+            </div>
+
+            <p>Recomendaciones para Transporte:</p>
+            <div class="row recomendaciones-transporte">
+
+            </div>
+            <p>Arboles para plantar: <span class="total-arboles">?</span></p>
+        </div>
+
+        <div id="graficas" class="col s12">
+
         </div>
     </div>
 </div>
@@ -68,6 +101,7 @@
 <script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/6.11.5/sweetalert2.all.min.js"></script>
+<script src="/js/moment.js"></script>
 <script src="/js/user_service.js"></script>
 <script src="/js/interface.js"></script>
 

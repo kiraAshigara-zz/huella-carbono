@@ -77,16 +77,10 @@ router.get('/api/transportes', function (req, res, next) {
     });
 });
 
-var dateFormat = require('dateformat');
+let dateFormat = require('dateformat');
 
 router.post('/api/consumo', function (req, res, next) {
     let consumos = req.body;
-    let timeFormated = dateFormat(new Date(), 'yyyy-mm-dd');
-
-    for (let i = 0, size = consumos.length; i < size; i++) {
-        consumos[i]['fecha'] = timeFormated;
-        consumos[i]['totalCo'] = 30;
-    }
 
     ElectrodomesticoService.insertConsumos(consumos, function (response) {
         res.send();
@@ -95,15 +89,25 @@ router.post('/api/consumo', function (req, res, next) {
 
 router.post('/api/viaje', function (req, res, next) {
     let viajes = req.body;
-    let timeFormated = dateFormat(new Date(), 'yyyy-mm-dd');
-
-    for (let i = 0, size = viajes.length; i < size; i++) {
-        viajes[i]['fecha'] = timeFormated;
-        viajes[i]['totalCo'] = 30;
-    }
 
     TransporteService.insertViajes(viajes, function (response) {
         res.send();
+    });
+});
+
+router.get('/api/users/:userId/recomendaciones', function (req, res, next) {
+    const userId = req.params.userId;
+
+    UserService.getRecomendaciones(userId, function (recomendaciones) {
+        res.json(recomendaciones);
+    });
+});
+
+router.get('/api/users/:userId/arboles', function (req, res, next) {
+    const userId = req.params.userId;
+
+    UserService.getArboles(userId, function (arboles) {
+        res.json(arboles);
     });
 });
 

@@ -9,10 +9,14 @@ let connection = mysql.createConnection({
 connection.connect();
 
 let DBClient = {
-    query: function (query, done) {
+    query: function (query, done, fail) {
         connection.query(query, function (err, rows, fields) {
             if (err) {
-                throw err
+                if (fail) {
+                    fail(err);
+                } else {
+                    throw err;
+                }
             }
 
             done(rows);
