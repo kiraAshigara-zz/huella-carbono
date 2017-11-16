@@ -23,3 +23,15 @@ body > .container {
     text-align: right !important;
     padding-right: 5px !important;
 }
+
+nav {
+    background-color: #6e9d30 !important;
+}
+
+.tabs .indicator {
+    background-color: #009688 !important;
+}
+
+.tabs .tab a {
+    color: #009688 !important;
+}
