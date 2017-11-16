@@ -35,3 +35,17 @@ nav {
 .tabs .tab a {
     color: #009688 !important;
 }
+
+.chart {
+    width: 100%;
+    min-height: 200px;
+}
+
+iframe {
+    width: 100%;
+    min-height: 400px;
+}
+
+.tabs {
+    overflow: hidden;
+}

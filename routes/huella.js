@@ -111,4 +111,38 @@ router.get('/api/users/:userId/arboles', function (req, res, next) {
     });
 });
 
+const GraficaService = require('../db/grafica_service');
+
+router.get('/api/grafica/consumo/:userId/:date', function (req, res, next) {
+    const userId = req.params.userId;
+    const date = req.params.date;
+
+    GraficaService.consumo(userId, date, function (data) {
+        res.json(data);
+    });
+});
+
+router.get('/api/grafica/viaje/:userId/:date', function (req, res, next) {
+    const userId = req.params.userId;
+    const date = req.params.date;
+
+    GraficaService.viaje(userId, date, function (data) {
+        res.json(data);
+    });
+});
+
+router.get('/api/grafica/ciudades', function (req, res, next) {
+    GraficaService.ciudades(function (data) {
+        res.json(data);
+    });
+});
+
+router.get('/api/grafica/ano/:userId', function (req, res, next) {
+    const userId = req.params.userId;
+
+    GraficaService.ano(userId, function (data) {
+        res.json(data);
+    });
+});
+
 module.exports = router;
